@@ -1,8 +1,8 @@
 #!/bin/bash
-ver="0.9.9-r01"
+ver="0.9.9-r02"
 #
 # Made by FOXBI
-# 2022.04.18
+# 2022.04.27
 #
 # ==============================================================================
 # Y or N Function
@@ -200,7 +200,7 @@ EOF
                 fi
 
                 sudo sed -i "s/pid=0x.... earlycon/pid=0x$PID earlycon/g" $MCHK/boot/grub/grub.cfg
-                sudo sed -i "s/vid=0x.... elevator/pid=0x$VID elevator/g" $MCHK/boot/grub/grub.cfg
+                sudo sed -i "s/vid=0x.... elevator/vid=0x$VID elevator/g" $MCHK/boot/grub/grub.cfg
                 sudo sed -i "s/default=\"1\"/default=\"0\"/g" $MCHK/boot/grub/grub.cfg
                 sudo sed -i "s/hd1,msdos/hd0,msdos/g" $MCHK/boot/grub/grub.cfg
                 sudo umount $MCHK > /dev/null 2>&1   
